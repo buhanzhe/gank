@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:checked="true"
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/tab_home" />
+
+    <item
+        android:checked="false"
+        android:id="@+id/navigation_girl"
+        android:icon="@drawable/ic_favorite"
+        android:title="@string/tab_girl" />
+
+    <item
+        android:checked="false"
+        android:id="@+id/navigation_me"
+        android:icon="@drawable/ic_account_circle"
+        android:title="@string/tab_me" />
+</menu>

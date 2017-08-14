@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.buhanzhe.gank"
+        minSdkVersion 18
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        config {
+            storeFile file(KEY_PATH)
+            storePassword KEY_PASS
+            keyAlias ALIAS_NAME
+            keyPassword ALIAS_PASS
+        }
+    }
+    buildTypes {
+        debug {
+            //混淆
+            minifyEnabled false
+            //加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名
+        }
+        release {
+            // 不显示Log
+            //buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled false
+            //加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    /*productFlavors {
+        qihoo {
+            applicationId "com.buhanzhe.gank.qihoo"
+        }
+        baidu {
+            applicationId "com.buhanzhe.gank.baidu"
+        }
+    }*/
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //gitHub开源lib
+    compile 'com.github.jd-alexander:LikeButton:0.2.0'
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'com.github.lygttpod:SuperTextView:2.0.9'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.9'
+
+    //切换皮肤
+    compile 'skin.support:skin-support:1.2.7'
+    compile 'skin.support:skin-support-design:1.2.4'
+    compile 'skin.support:skin-support-cardview:1.2.0'
+
+
+    compile 'com.qiniu:qiniu-java-sdk:7.2.+'
+    compile project(':MVP')
+}

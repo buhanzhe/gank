@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ViewBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/top_text_title_bar" />
+
+        <include layout="@layout/line_h" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/me_size"
+            android:layout_marginTop="@dimen/margin_top"
+            app:cardBackgroundColor="@color/ViewBackground"
+            app:cardCornerRadius="0dp">
+
+            <RelativeLayout
+                android:id="@+id/me_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <!--<de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/me_iv"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_default_user" />-->
+                <ImageView
+                    android:id="@+id/me_iv"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_default_user" />
+
+                <TextView
+                    android:id="@+id/me_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_top"
+                    android:layout_toEndOf="@+id/me_iv"
+                    android:text="@string/name_test"
+                    android:textColor="@color/colorTextViewBlack" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/login_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <Button
+                    android:id="@+id/login_bt"
+                    android:layout_width="@dimen/me_size"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/loginbutton_back"
+                    android:text="@string/login_register"
+                    android:textColor="@color/colorTextViewBlack" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <include layout="@layout/fragment_mine_include" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
