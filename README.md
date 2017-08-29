@@ -8,7 +8,8 @@
 
 ## 以下是项目依赖
 
-'''
+
+
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
@@ -24,8 +25,6 @@
     compile 'skin.support:skin-support:1.2.7'
     compile 'skin.support:skin-support-design:1.2.4'
     compile 'skin.support:skin-support-cardview:1.2.0'
-
-
     compile 'com.qiniu:qiniu-java-sdk:7.2.+'
     
     // Model-View-Intent
@@ -43,7 +42,6 @@
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
     compile 'com.orhanobut:logger:1.15'
-'''
 
 
 
